@@ -10,29 +10,136 @@ Cloud service providers install proprietary software on customers virtual machin
 
 ## Field explanations
 
-- Name: The name of the cloud agent 
-- Cloud Services: The name of the cloud service that installed the cloud agent on the cloud users' virtual machines, **or** the name of the AMI image where the agent is pre-installed. 
-- Past Vulnerabilities: A comma-separated list of past vulnerabilities found in the cloud agent. 
-- Attack Surface: A free text explanation of the potential attack surface of the cloud agent, such as.... 
-- Open Source: Indicates whether the cloud agent source is publicly accessible or not.
-- Operating System: The operating system supported by the specific cloud agent. 
-- Cloud Provider: The name of the Cloud provider (AWS, GCP, or Azure) 
+- Cloud provider: The name of the Cloud provider (AWS, GCP, or Azure) 
+- Cloud services: A comma-seperated list of the names of the cloud services that install the cloud agent on the cloud users' virtual machines, **or** the name of the images where the agent is pre-installed. 
+- Past vulnerabilities: A comma-separated list of past vulnerabilities found in the cloud agent. 
+- Attack surface: A free text explanation of the potential attack surface of the cloud agent, such as.... 
+- Open source: Indicates whether the cloud agent source is publicly accessible or not.
+- Operating system: The operating system supported by the specific cloud agent. 
+- Cloud Middleware Dataset
 
+## Dataset
 
-### The Dataset
+### Open Management Infrastructure (OMI)
 
-|                             Name                             | Cloud Services                                               | Past Vulnerabilities                                         | Attack Surface                                               | Open Source | Operating System   | Cloud Provider |
-| :----------------------------------------------------------: | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ----------- | ------------------ | -------------- |
-| [Open Management Infrastructure (OMI)](https://github.com/microsoft/omi) | Azure Automation State Configuration<br/>DSC Extension Log Analytics<br/>Agent Azure Diagnostics (LAD)<br/>Azure Automation Update Management<br/>Azure Automation<br/>Azure Security Center<br/>Azure Sentinel<br/>Container Monitoring Solution<br/>Azure HDInsight | [CVE-2021-38645](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-38645) – Privilege Escalation vulnerability<br />[CVE-2021-38647](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-38647) – Unauthenticated RCE as root<br />[CVE-2021-38648](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-38648)– Privilege Escalation vulnerability<br />[CVE-2021-38649](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-38649) – Privilege Escalation vulnerability | Runs at high privileges (root) <br />Exposes a remote attack surface | Yes         | Linux              | Azure          |
-| [Microsoft Azure Linux Guest Agent (WALinuxAgent)](https://github.com/Azure/WALinuxAgent) | Azure Virtual Machine (pre-installed on VM  images)          | [CVE-2019-0804](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-0804) - Incorrect Permission  Assignment for Critical Resource | Runs at high privileges  (root)                              | Yes         | Linux              | Azure          |
-| [Operations  Management Suite Agent for Linux (OMS)](https://github.com/microsoft/OMS-Agent-for-Linux) | Azure Log Analytics<br />Azure Sentinel<br />Azure Security Center |                                                              | Runs at high privileges  (root)                              | Yes         | Linux              | Azure          |
-| [Dependency agent](https://docs.microsoft.com/en-us/azure/azure-monitor/agents/agents-overview#dependency-agent) | Azure Log Analytics                                          |                                                              | Runs at high privileges  (root)<br />Kernel driver           | No          | Linux              | Azure          |
-| [Azure Pipelines Agent](https://github.com/microsoft/azure-pipelines-agent) | Azure Pipelines<br />Azure Log Analytics<br /> Azure DevOps Server 2019+<br />TFS 2017+ |                                                              | Runs at high privileges  (root)                              | No          | Linux     Windows  | Azure          |
-| [Azure RD Agent Service](https://docs.microsoft.com/en-us/troubleshoot/azure/virtual-machines/windows-azure-guest-agent) | Pre-installed on Azure Windows instances                     |                                                              | • Runs at high privileges (SYSTEM)                           | No          | Windows            | Azure          |
-| [Windows Azure Guest Agent](https://docs.microsoft.com/en-us/troubleshoot/azure/virtual-machines/windows-azure-guest-agent) | Pre-installed on Azure Windows instances                     |                                                              | • Runs at high privileges (SYSTEM)                           | No          | Windows            | Azure          |
-| [AWS Systems Manager Agent (SSM Agent)](https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-agent.html) | Many services requires SSM, but SSM usually  comes pre-installed in the VM or installed manually by the user. | [CVE-2022-29527](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-29527) - Privilege escalation to root | Runs at high privileges  (root)                              | Yes         | Linux     Windows  | AWS            |
-| [Paravirtual drivers  for Windows instances](https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/xen-drivers-overview.html#xen-driver-awspv) | Pre-installed  on AWS Windows instances                      | -                                                            | N/A                                                          | No          | Windows            | AWS            |
-| [Amazon ECS  container agent](https://github.com/aws/amazon-ecs-agent) | Amazon ECS-optimized AMI<br />Amazon ECS-optimized Windows Server AMI:<br />Amazon ECS-optimized Windows Server 2022 Full AMI<br />Amazon ECS-optimized Windows Server 2022 Core AMI <br />Amazon ECS-optimized Windows Server 2019 Full AMI<br />Amazon ECS-optimized Windows Server 2019 Core AMI<br />Amazon ECS-optimized Windows Server 2004 Core AMI |                                                              | • Runs at high privileges                                    | Yes         | Linux     Windows  | AWS            |
-| [Google Accounts Daemon](https://github.com/GoogleCloudPlatform/compute-image-packages/blob/master/packages/python-google-compute-engine/google_compute_engine/accounts/accounts_daemon.py) | Google OS Login                                              | [CVE-2020-8933](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-8933) | • Runs at high privileges (root)                             | Yes         | Linux              | GCP            |
-| [Google OS Config Agent](https://github.com/GoogleCloudPlatform/osconfig) | Pre-installed on GCP Linux instances                         | [Google's osconfig agent - local privilege escalation](https://github.com/irsl/google-osconfig-privesc) | • Runs at high privileges  (root)                            | Yes         | Linux<br />Windows | GCP            |
-| [Google Guest Agent](https://github.com/GoogleCloudPlatform/guest-agent) | Pre-installed on GCP Linux instances                         |                                                              | • Runs at high privileges                                    | Yes         | Linux<br />Windows | GCP            |
+* Cloud provider: Azure
+* Cloud services: Azure Automation State Configuration, Extension Log Analytics, Agent Azure Diagnostics (LAD), Azure Update Management, Azure Automation, Azure Security Center, Azure Sentinel, Container Monitoring Solution, Azure HDInsight
+* Past vulnerabilities: [CVE-2021-38645](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-38645) – Local privilege escalation to root, [CVE-2021-38647](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-38647) – Unauthenticated Remote Code Execution as root, [CVE-2021-38648](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-38648)– Local privilege escalation to root, [CVE-2021-38649](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-38649) – Local privilege escalation to root
+* Attack surface: 
+  * Runs at high privileges (root)
+  * Some configuration expose a remote attack surface
+* Open source: https://github.com/microsoft/omi
+* Operating system: Linux
+
+### Microsoft Azure Guest Agent (WALinuxAgent)
+
+* Cloud provider: Azure
+* Cloud services: Pre-built in all Azure Linux images
+* Past vulnerabilities: [CVE-2019-0804](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-0804) - Incorrect Permission Assignment for Critical Resource
+* Attack surface: 
+  * Runs at high privileges (root)
+* Open source: https://github.com/Azure/WALinuxAgent
+* Operating system: Linux
+
+### Operations Management Suite (OMS)
+
+* Cloud provider: Azure
+* Cloud services: Azure Log Analytics, Azure Sentinel, Azure Security Center
+* Past vulnerabilities: No public vulnerabilities
+* Attack surface: 
+  * Runs at high privileges (root)
+* Open source: https://github.com/microsoft/OMS-Agent-for-Linux
+* Operating system: Linux
+
+### Depedency agent
+
+* Cloud provider: Azure
+* Cloud services: Azure Log Analytics
+* Past vulnerabilities: No public vulnerabilities
+* Attack surface: 
+  * Runs at high privileges  (root)
+  * Exposes a kernel attack surface via kernel driver
+* Open source: No
+* Operating system: Linux
+
+### Azure pipelines agent
+
+* Cloud provider: Azure
+* Cloud services: Azure Pipelines, Azure Log Analytics, Azure DevOps Server 2019+, TFS 2017+
+* Past vulnerabilities: No public vulnerabilities
+* Attack surface: 
+  * Runs at high privileges 
+* Open source: https://github.com/microsoft/azure-pipelines-agent
+* Operating system: Linux, Windows
+
+### Azure RD Agent Service
+
+* Cloud provider: Azure
+* Cloud services: Pre-built in all Azure Windows images
+* Past vulnerabilities: No public vulnerabilities
+* Attack surface: 
+  * Runs at high privileges (SYSTEM)
+* Open source: No
+* Operating system: Windows
+
+### AWS Systems Manager Agent (SSM Agent)
+
+* Cloud provider: AWS
+* Cloud services: Pre-built in Amazon virtual machine images
+* Past vulnerabilities: [CVE-2022-29527](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-29527) - Local privilege escalation to root
+* Attack surface: 
+  * Runs at high privileges
+* Open source: https://github.com/aws/amazon-ssm-agent
+* Operating system: Windows
+
+### AWS PV Drivers
+
+* Cloud provider: AWS
+* Cloud services: Pre-built in Amazon Windows virtual machine images
+* Past vulnerabilities: No public vulnerabilities
+* Attack surface: 
+  * Exposes a kernel attack surface
+* Open source: No
+* Operating system: Windows
+
+### AWS ECS container agent
+
+* Cloud provider: AWS
+* Cloud services: Amazon ECS-optimized AMI, Amazon ECS-optimized Windows Server AMI, Amazon ECS-optimized Windows Server 2022 Full AMI, Amazon ECS-optimized Windows Server 2022 Core AMI, Amazon ECS-optimized Windows Server 2019 Full AMI, Amazon ECS-optimized Windows Server 2019 Core AMI, Amazon ECS-optimized Windows Server 2004 Core AMI
+* Past vulnerabilities: No public vulnerabilities
+* Attack surface: 
+  * Runs at high privileges 
+* Open source: https://github.com/aws/amazon-ecs-agent
+* Operating system: Windows, Linux
+
+### Google Accounts Daemon
+
+* Cloud provider: Google Cloud Platform
+* Cloud services: Google OS Login
+* Past vulnerabilities: [CVE-2020-8933](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-8933) - Local privilege escalation to root
+* Attack surface: 
+  * Runs at high privileges 
+* Open source: https://github.com/GoogleCloudPlatform/compute-image-packages/blob/master/packages/python-google-compute-engine/google_compute_engine/accounts/accounts_daemon.py
+* Operating system: Linux
+
+### Google OSConfig agent
+
+* Cloud provider: Google Cloud Platform
+* Cloud services: Pre-built in GCP virtual machine images
+* Past vulnerabilities: [Google's osconfig agent - local privilege escalation](https://github.com/irsl/google-osconfig-privesc)
+* Attack surface: 
+  * Runs at high privileges 
+* Open source: https://github.com/GoogleCloudPlatform/osconfig
+* Operating system: Windows, Linux
+
+### Google guest agent
+
+* Cloud provider: Google Cloud Platform
+* Cloud services: Pre-built in GCP virtual machine images
+* Past vulnerabilities: No public vulnerabilities
+* Attack surface: 
+  * Runs at high privileges 
+* Open source: https://github.com/GoogleCloudPlatform/guest-agent
+* Operating system: Windows, Linux
+
+​	
