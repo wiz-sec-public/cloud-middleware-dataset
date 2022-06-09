@@ -90,7 +90,7 @@ Cloud service providers install proprietary software on customers virtual machin
 * Attack surface: 
   * Runs at high privileges
 * Open source: https://github.com/aws/amazon-ssm-agent
-* Operating system: Windows
+* Operating system: Windows, Linux, macOS
 
 ### AWS PV Drivers
 
