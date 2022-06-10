@@ -112,6 +112,16 @@ Cloud service providers install proprietary software on customers virtual machin
 * Open source: https://github.com/aws/amazon-ecs-agent
 * Operating system: Windows, Linux
 
+### AWS EC2 Hibernation Initialization Agent
+
+* Cloud Provider: AWS
+* Cloud Services: Supported EC2 instances, including Amazon Linux
+* Past vulnerabilities: No public vulnerabilities
+* Attack surface:
+  * Runs at high privileges
+* Open Source: https://github.com/aws/amazon-ec2-hibinit-agent
+* Operating system: Linux 
+
 ### Google Accounts Daemon
 
 * Cloud provider: Google Cloud Platform
