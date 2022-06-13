@@ -51,7 +51,7 @@ Cloud service providers install proprietary software on customers virtual machin
 * Open source: https://github.com/microsoft/OMS-Agent-for-Linux
 * Operating system: Linux
 
-### Depedency agent
+### Dependency agent
 
 * Cloud provider: Azure
 * Cloud services: Azure Log Analytics
