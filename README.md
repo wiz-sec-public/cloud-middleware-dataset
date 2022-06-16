@@ -24,7 +24,7 @@ Cloud service providers install proprietary software on customers virtual machin
 
 * Cloud provider: Azure
 * Cloud services: Azure Automation State Configuration, Extension Log Analytics, Agent Azure Diagnostics (LAD), Azure Update Management, Azure Automation, Azure Security Center, Azure Sentinel, Container Monitoring Solution, Azure HDInsight
-* Past vulnerabilities: [CVE-2021-38645](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-38645) – Local privilege escalation to root, [CVE-2021-38647](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-38647) – Unauthenticated Remote Code Execution as root, [CVE-2021-38648](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-38648)– Local privilege escalation to root, [CVE-2021-38649](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-38649) – Local privilege escalation to root
+* Past vulnerabilities: [CVE-2021-38645](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-38645) – Local privilege escalation to root, [CVE-2021-38647](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-38647) – Unauthenticated Remote Code Execution as root, [CVE-2021-38648](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-38648)– Local privilege escalation to root, [CVE-2021-38649](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-38649) – Local privilege escalation to root, [CVE-2022-29149](https://msrc.microsoft.com/en-US/security-guidance/advisory/CVE-2022-29149) - Local privilege escalation
 * Attack surface: 
   * Runs at high privileges (root)
   * Some configuration expose a remote attack surface
