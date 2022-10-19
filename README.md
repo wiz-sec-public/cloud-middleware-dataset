@@ -82,6 +82,16 @@ Cloud service providers install proprietary software on customers virtual machin
 * Open source: No
 * Operating system: Windows
 
+### Azure Arc-enabled Kubernetes agent
+
+* Cloud provider: Azure
+* Cloud services: Azure Arc
+* Past vulnerabilities: [CVE-2022-37968](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-37968)
+* Attack surface: 
+  * Exposes remote attack surface via reverse proxy
+* Open source: [No](https://learn.microsoft.com/en-us/azure/azure-arc/kubernetes/conceptual-agent-overview)
+* Operating system: Linux
+
 ### AWS Systems Manager Agent (SSM Agent)
 
 * Cloud provider: AWS
