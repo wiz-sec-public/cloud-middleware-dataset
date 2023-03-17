@@ -31,6 +31,17 @@ Cloud service providers install proprietary software on customers virtual machin
 * Open source: https://github.com/microsoft/omi
 * Operating system: Linux
 
+### DSIMountAgent
+
+* Cloud provider: Azure
+* Cloud services: Azure Machine Learning
+* Past vulnerabilities: [CVE-2023-23382](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-23382) – Azure Machine Learning Compute Instance Information Disclosure Vulnerability
+* Attack surface: 
+  * Runs at high privileges (root)
+  * Used to expose a remote attack surface allowing information disclosure
+* Open source: No
+* Operating system: Linux
+
 ### Microsoft Azure Guest Agent (WALinuxAgent)
 
 * Cloud provider: Azure
