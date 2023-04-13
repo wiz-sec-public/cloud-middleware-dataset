@@ -35,10 +35,10 @@ Cloud service providers install proprietary software on customers virtual machin
 
 * Cloud provider: Azure
 * Cloud services: Azure Machine Learning
-* Past vulnerabilities: [CVE-2023-23382](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-23382) – Azure Machine Learning Compute Instance Information Disclosure Vulnerability
+* Past vulnerabilities: [CVE-2023-28312](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-28312) – Azure Machine Learning Information Disclosure Vulnerability
 * Attack surface: 
   * Runs at high privileges (root)
-  * Used to expose a remote attack surface allowing information disclosure
+  * Used to expose a remote attack surface allowing sensitive information disclosure
 * Open source: No
 * Operating system: Linux
 
